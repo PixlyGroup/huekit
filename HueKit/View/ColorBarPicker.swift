@@ -250,18 +250,31 @@ open class ColorBarPicker: UIControl {
 	
 	private let accessibilityInterval: CGFloat = 0.05
 	
-	open override var accessibilityTraits: UIAccessibilityTraits {
-		get {
+	// open override var accessibilityTraits: UIAccessibilityTraits {
+	// 	get {
+	// 		var t = super.accessibilityTraits
+			
+	// 		t.insert(.adjustable)
+			
+	// 		return t
+	// 	}
+	// 	set {
+	// 		super.accessibilityTraits = newValue
+	// 	}
+	// }
+
+  open override var accessibilityTraits: UIAccessibilityTraits {
+  	get {
 			var t = super.accessibilityTraits
-			
-			t.insert(.adjustable)
-			
+
+			t != UIAccessibilityTraits.adjustable
+            
 			return t
-		}
+	  }
 		set {
 			super.accessibilityTraits = newValue
 		}
-	}
+	}	
 	
 	open override func accessibilityIncrement() {
 		
